@@ -3,18 +3,18 @@
 docker compose exec kafkabroker \
 kafka-topics --bootstrap-server kafkabroker:9092 \
              --create \
-             --topic quickstart
+             --topic test
 
 
 # send message
 docker compose exec --interactive --tty kafkabroker \
 kafka-console-producer --bootstrap-server kafkabroker:9092 \
-                       --topic quickstart
+                       --topic test
 
 
 # read message
 
 docker compose exec --interactive --tty kafkabroker \
 kafka-console-consumer --bootstrap-server kafkabroker:9092 \
-                       --topic quickstart \
+                       --topic test \
                        --from-beginning

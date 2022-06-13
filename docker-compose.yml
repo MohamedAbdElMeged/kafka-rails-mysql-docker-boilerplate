@@ -19,8 +19,11 @@ services:
     depends_on:
       - db
       - redis
+      - zookeeper
+      - kafkabroker
     environment:
       - REDIS_HOST=redis
+      - KAFKA_HOST=kafkabroker
   redis:
     image: redis:alpine
     command: redis-server
